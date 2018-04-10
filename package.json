@@ -1,0 +1,32 @@
+{
+    "name": "multi-hashing",
+    "version": "1.0.3",
+    "main": "multihashing",
+    "author": {
+        "name": "SpideryWookie"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/spiderywookie/node-multi-hashing.git"
+    },
+    "dependencies": {
+        "bindings": "^1.3.0",
+        "nan": "^2.6.2",
+        "node-gyp": "^3.6.2"
+    },
+    "keywords": [
+        "scrypt",
+        "scryptjane",
+        "script-n",
+        "x11",
+        "quark",
+        "keccak_hash",
+        "skein",
+        "bcrypt",
+        "keccak",
+        "blake",
+        "shavite",
+        "fugue",
+        "sha1"
+    ]
+}
