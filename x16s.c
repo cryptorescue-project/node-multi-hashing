@@ -42,21 +42,29 @@ enum Algo {
 	HASH_FUNC_COUNT
 };
 
-static void getAlgoString(const uint8_t* prevblock, char *output)
+void getAlgoString(const uint8_t* prevBlock, char* output)
 {
-	char *sptr = output;
-	int j;
+        int j;
+        char list[] = "0123456789abcdef";
+        char order[18];
+	strcpy(order,list);
 
-	for (j = 0; j < HASH_FUNC_COUNT; j++) {
-		char b = (15 - j) >> 1; // 16 ascii hex chars, reversed
-		uint8_t algoDigit = (j & 1) ? prevblock[b] & 0xF : prevblock[b] >> 4;
-		if (algoDigit >= 10)
-			sprintf(sptr, "%c", 'A' + (algoDigit - 10));
-		else
-			sprintf(sptr, "%u", (uint32_t) algoDigit);
-		sptr++;
-	}
-	*sptr = '\0';
+        for(j = 0; j < HASH_FUNC_COUNT; j++) {
+                // get location in list, of character at prevBlock[j]
+                char *idx = strchr(list,prevBlock[j]);
+                int offset = idx - list;
+                char val = order[offset];                
+
+                // make space for value
+                memmove(order+1,order,strlen(order));
+                
+                //assign value
+                order[0] = val;
+                // remove original, value
+                int len = strlen(order) - offset+1;
+                memmove(order+offset+1,order+offset+2,len);
+        }
+        sprintf(output, order);
 }
 
 void x16s_hash(const char* input, char* output, uint32_t len)
