@@ -3,11 +3,11 @@
     "version": "1.0.3",
     "main": "multihashing",
     "author": {
-        "name": "Pigeoncoin (with thanks to zone117x and foxer666)"
+        "name": "CryptoRescue (with thanks to zone117x, foxer666 and lukepighetti)"
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/pigeoncoin/node-multi-hashing.git"
+        "url": "https://github.com/cryptorescue-project/node-multi-hashing.git"
     },
     "dependencies": {
         "bindings": "^1.3.0",
@@ -19,8 +19,8 @@
         "scryptjane",
         "script-n",
         "x11",
-		"x16r",
-		"x16s",
+	"x16r",
+	"x16s",
         "quark",
         "keccak_hash",
         "skein",
